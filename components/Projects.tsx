@@ -14,10 +14,21 @@ export default function Projects() {
 
     const projects = [
         {
+            title: 'KAG Batteries',
+            subtitle: 'Business Website',
+            description: 'Modern business website for KAG Batteries - a leading automotive and inverter battery company with premium product showcase.',
+            tech: ['Next.js', 'Modern UI', 'Responsive', 'SEO'],
+            features: ['Product Catalog', 'Gallery', 'Contact Form', 'Brochures'],
+            github: '#',
+            live: 'https://www.kagbatteries.in/',
+            gradient: 'linear-gradient(135deg, #f59e0b 0%, #dc2626 100%)',
+            icon: '🔋'
+        },
+        {
             title: 'Onlinegharke',
             subtitle: 'E-Commerce Platform',
             description: 'Full-stack e-commerce platform enabling online shopping for household items with secure checkout.',
-            tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+            tech: ['E-Commerce', 'Payments', 'Inventory', 'Logistics'],
             features: ['User Authentication', 'Product Management', 'Shopping Cart', 'Order Tracking'],
             github: '#',
             live: '#',
@@ -28,7 +39,7 @@ export default function Projects() {
             title: 'Swasthya 2016',
             subtitle: 'Blood Donation Platform',
             description: 'Social impact application connecting blood donors with recipients for life-saving connections.',
-            tech: ['JavaScript', 'PHP', 'MySQL', 'Google Maps'],
+            tech: ['Web App', 'Database', 'Maps', 'Notifications'],
             features: ['Donor Registration', 'Emergency Requests', 'Location Search', 'Notifications'],
             github: '#',
             live: '#',
@@ -37,10 +48,10 @@ export default function Projects() {
         },
         {
             title: 'Portfolio Website',
-            subtitle: 'Modern Developer Portfolio',
-            description: 'Responsive portfolio with Next.js featuring dark mode, animations, and optimized performance.',
-            tech: ['Next.js', 'TypeScript', 'Framer Motion', 'CSS'],
-            features: ['Server-side Rendering', 'Smooth Animations', 'Contact Form', 'Responsive'],
+            subtitle: 'Personal Brand',
+            description: 'Responsive portfolio showcasing entrepreneurial journey with premium animations and modern design.',
+            tech: ['Next.js', 'Animations', 'Dark Mode', 'Responsive'],
+            features: ['Premium UI', 'Smooth Animations', 'Contact Form', 'Mobile Friendly'],
             github: '#',
             live: '#',
             gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
