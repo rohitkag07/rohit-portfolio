@@ -1,40 +1,76 @@
 .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
+    gap: 2.5rem;
     margin-bottom: var(--spacing-2xl);
 }
 
 .contactInfo {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: 1.5rem;
+}
+
+.contactInfo>div,
+.formSection>div {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+}
+
+.contactInfo>div:hover,
+.formSection>div:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .contactInfo h3,
 .formSection h3 {
     font-size: 1.5rem;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1.25rem;
     color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.contactInfo h3::before,
+.formSection h3::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
 }
 
 .intro {
     color: var(--color-text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 .infoList {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .infoItem {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 1rem;
     align-items: start;
+    padding: 0.75rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.infoItem:hover {
+    background: rgba(102, 126, 234, 0.05);
 }
 
 .infoItem svg {
@@ -44,10 +80,12 @@
 }
 
 .infoItem h4 {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--color-text-tertiary);
     margin-bottom: 0.25rem;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .infoItem a,
@@ -55,6 +93,7 @@
     color: var(--color-text-primary);
     font-size: 1rem;
     margin: 0;
+    font-weight: 500;
 }
 
 .infoItem a:hover {
@@ -63,38 +102,58 @@
 
 .social {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: 0.75rem;
 }
 
 .social a {
     flex: 1;
     justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: transparent;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    color: white;
 }
 
 .achievements {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .achievement {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: 0.75rem;
     color: var(--color-text-secondary);
-    padding: var(--spacing-xs);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-fast);
+    padding: 0.75rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .achievement:hover {
-    background: var(--color-bg-tertiary);
+    background: rgba(102, 126, 234, 0.05);
+    border-color: rgba(102, 126, 234, 0.2);
     transform: translateX(5px);
 }
 
 .achievementIcon {
-    color: var(--color-accent-primary);
+    color: #f59e0b;
     display: flex;
     align-items: center;
 }
@@ -102,26 +161,28 @@
 .hobbies h4 {
     font-size: 1rem;
     color: var(--color-text-primary);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .hobbyTags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
 }
 
 .hobbyTags span {
-    background: var(--color-bg-tertiary);
+    background: rgba(102, 126, 234, 0.1);
     color: var(--color-text-secondary);
     padding: 0.5rem 1rem;
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
     font-size: 0.9rem;
-    transition: all var(--transition-fast);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .hobbyTags span:hover {
-    background: var(--color-accent-primary);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     transform: scale(1.05);
 }
@@ -130,49 +191,55 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1.25rem;
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
 }
 
 .formGroup label {
     color: var(--color-text-primary);
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .formGroup input,
 .formGroup textarea {
-    background: var(--color-bg-tertiary);
-    border: 2px solid transparent;
-    border-radius: var(--radius-md);
-    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(102, 126, 234, 0.05);
+    border: 2px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
     color: var(--color-text-primary);
     font-size: 1rem;
     font-family: inherit;
-    transition: all var(--transition-fast);
+    transition: all 0.3s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: var(--color-text-tertiary);
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
     outline: none;
     border-color: var(--color-accent-primary);
-    background: var(--color-bg-secondary);
+    background: rgba(102, 126, 234, 0.08);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
 .formGroup textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
 }
 
 /* Footer */
 .footer {
     text-align: center;
-    padding: var(--spacing-lg) 0;
+    padding: 2rem 0;
     border-top: 1px solid var(--glass-border);
     margin-top: var(--spacing-2xl);
 }
@@ -180,6 +247,7 @@
 .footer p {
     color: var(--color-text-tertiary);
     margin: 0;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 968px) {
@@ -191,5 +259,10 @@
 @media (max-width: 640px) {
     .social {
         flex-direction: column;
+    }
+
+    .contactInfo>div,
+    .formSection>div {
+        padding: 1.5rem;
     }
 }

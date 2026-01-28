@@ -1,0 +1,33 @@
+.progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+            #667eea 0%,
+            #764ba2 25%,
+            #f093fb 50%,
+            #764ba2 75%,
+            #667eea 100%);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+    transform-origin: 0%;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.7),
+        0 0 20px rgba(118, 75, 162, 0.5);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

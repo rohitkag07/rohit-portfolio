@@ -1,8 +1,9 @@
 'use client';
 
-import { ExternalLink, Github } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { MouseEvent } from 'react';
 import styles from './Projects.module.css';
 
 export default function Projects() {
@@ -13,151 +14,180 @@ export default function Projects() {
 
     const projects = [
         {
-            title: 'Onlinegharke - E-Commerce Platform',
-            description: 'Founded and developed a full-stack e-commerce platform enabling online shopping for household items. Implemented product catalog, shopping cart, and secure checkout functionality.',
-            tech: ['React', 'Node.js', 'MongoDB', 'Express', 'Payment Integration'],
-            features: [
-                'User authentication and authorization',
-                'Product management system',
-                'Shopping cart and wishlist',
-                'Order tracking and management',
-                'Responsive design for mobile and desktop'
-            ],
+            title: 'Onlinegharke',
+            subtitle: 'E-Commerce Platform',
+            description: 'Full-stack e-commerce platform enabling online shopping for household items with secure checkout.',
+            tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+            features: ['User Authentication', 'Product Management', 'Shopping Cart', 'Order Tracking'],
             github: '#',
             live: '#',
-            image: '🛒'
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            icon: '🛒'
         },
         {
-            title: 'Swasthya 2016 - Blood Donation Platform',
-            description: 'Developed a social impact application connecting blood donors with recipients. The platform facilitates life-saving connections and maintains a database of willing donors.',
-            tech: ['JavaScript', 'HTML/CSS', 'PHP', 'MySQL', 'Google Maps API'],
-            features: [
-                'Donor registration and profile management',
-                'Emergency blood request system',
-                'Location-based donor search',
-                'Real-time notifications',
-                'Admin dashboard for monitoring'
-            ],
+            title: 'Swasthya 2016',
+            subtitle: 'Blood Donation Platform',
+            description: 'Social impact application connecting blood donors with recipients for life-saving connections.',
+            tech: ['JavaScript', 'PHP', 'MySQL', 'Google Maps'],
+            features: ['Donor Registration', 'Emergency Requests', 'Location Search', 'Notifications'],
             github: '#',
             live: '#',
-            image: '🩸'
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            icon: '🩸'
         },
         {
-            title: 'Personal Portfolio Website',
-            description: 'Modern, responsive portfolio website built with Next.js showcasing projects, skills, and professional experience. Features dark mode, smooth animations, and optimized performance.',
-            tech: ['Next.js', 'TypeScript', 'CSS Modules', 'React'],
-            features: [
-                'Server-side rendering for SEO',
-                'Dark/Light mode toggle',
-                'Smooth scroll animations',
-                'Contact form integration',
-                'Fully responsive design'
-            ],
+            title: 'Portfolio Website',
+            subtitle: 'Modern Developer Portfolio',
+            description: 'Responsive portfolio with Next.js featuring dark mode, animations, and optimized performance.',
+            tech: ['Next.js', 'TypeScript', 'Framer Motion', 'CSS'],
+            features: ['Server-side Rendering', 'Smooth Animations', 'Contact Form', 'Responsive'],
             github: '#',
             live: '#',
-            image: '💼'
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+            icon: '💼'
         }
     ];
 
     return (
         <section id="projects" className="section">
             <div className="container">
-                <motion.h2
-                    className="section-title"
+                <motion.div
+                    className={styles.header}
                     initial={{ opacity: 0, y: 20 }}
                     animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    Featured Projects
-                </motion.h2>
+                    <h2 className="section-title">Featured Projects</h2>
+                    <p className={styles.subtitle}>
+                        A selection of projects I've built with passion and precision
+                    </p>
+                </motion.div>
 
                 <div ref={sectionRef} className={styles.projectsGrid}>
                     {projects.map((project, index) => (
-                        <motion.div
+                        <ProjectCard
                             key={index}
-                            className={`glass-card ${styles.projectCard}`}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            whileHover={{
-                                y: -10,
-                                rotateX: 2,
-                                rotateY: 2,
-                                boxShadow: '0 25px 50px rgba(102, 126, 234, 0.2)'
-                            }}
-                            style={{ transformStyle: 'preserve-3d' }}
-                        >
-                            <motion.div
-                                className={styles.projectEmoji}
-                                whileHover={{ scale: 1.2, rotate: 10 }}
-                                transition={{ type: 'spring', stiffness: 300 }}
-                            >
-                                {project.image}
-                            </motion.div>
-
-                            <h3 className={styles.projectTitle}>{project.title}</h3>
-                            <p className={styles.projectDescription}>{project.description}</p>
-
-                            <div className={styles.techStack}>
-                                {project.tech.map((tech, techIndex) => (
-                                    <motion.span
-                                        key={techIndex}
-                                        className={styles.techTag}
-                                        whileHover={{
-                                            scale: 1.1,
-                                            backgroundColor: 'var(--color-accent-primary)',
-                                            color: 'white'
-                                        }}
-                                    >
-                                        {tech}
-                                    </motion.span>
-                                ))}
-                            </div>
-
-                            <div className={styles.features}>
-                                <h4>Key Features:</h4>
-                                <ul>
-                                    {project.features.map((feature, featureIndex) => (
-                                        <motion.li
-                                            key={featureIndex}
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={sectionInView ? { opacity: 1, x: 0 } : {}}
-                                            transition={{ delay: index * 0.2 + featureIndex * 0.05 }}
-                                        >
-                                            {feature}
-                                        </motion.li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className={styles.projectLinks}>
-                                <motion.a
-                                    href={project.github}
-                                    className="btn btn-secondary"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <Github size={18} />
-                                    Code
-                                </motion.a>
-                                <motion.a
-                                    href={project.live}
-                                    className="btn btn-primary"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <ExternalLink size={18} />
-                                    Live Demo
-                                </motion.a>
-                            </div>
-                        </motion.div>
+                            project={project}
+                            index={index}
+                            inView={sectionInView}
+                        />
                     ))}
                 </div>
             </div>
         </section>
+    );
+}
+
+interface Project {
+    title: string;
+    subtitle: string;
+    description: string;
+    tech: string[];
+    features: string[];
+    github: string;
+    live: string;
+    gradient: string;
+    icon: string;
+}
+
+function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
+    return (
+        <motion.div
+            className={styles.projectCard}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            onMouseMove={handleMouseMove}
+            whileHover={{ y: -8 }}
+        >
+            {/* Spotlight effect */}
+            <motion.div
+                className={styles.spotlight}
+                style={{
+                    background: useMotionTemplate`
+                        radial-gradient(
+                            400px circle at ${mouseX}px ${mouseY}px,
+                            rgba(102, 126, 234, 0.15),
+                            transparent 80%
+                        )
+                    `
+                }}
+            />
+
+            {/* Gradient border */}
+            <div className={styles.gradientBorder} style={{ background: project.gradient }} />
+
+            <div className={styles.cardContent}>
+                <div className={styles.cardHeader}>
+                    <motion.span
+                        className={styles.projectIcon}
+                        whileHover={{ scale: 1.2, rotate: 10 }}
+                    >
+                        {project.icon}
+                    </motion.span>
+                    <div>
+                        <h3 className={styles.projectTitle}>{project.title}</h3>
+                        <span className={styles.projectSubtitle}>{project.subtitle}</span>
+                    </div>
+                </div>
+
+                <p className={styles.projectDescription}>{project.description}</p>
+
+                <div className={styles.techStack}>
+                    {project.tech.map((tech, techIndex) => (
+                        <motion.span
+                            key={techIndex}
+                            className={styles.techTag}
+                            whileHover={{ scale: 1.05, y: -2 }}
+                        >
+                            {tech}
+                        </motion.span>
+                    ))}
+                </div>
+
+                <div className={styles.features}>
+                    {project.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className={styles.feature}>
+                            <span className={styles.featureCheck}>✓</span>
+                            {feature}
+                        </div>
+                    ))}
+                </div>
+
+                <div className={styles.projectLinks}>
+                    <motion.a
+                        href={project.github}
+                        className={styles.linkBtn}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <Github size={18} />
+                        <span>Code</span>
+                    </motion.a>
+                    <motion.a
+                        href={project.live}
+                        className={styles.linkBtnPrimary}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <span>Live Demo</span>
+                        <ArrowUpRight size={18} />
+                    </motion.a>
+                </div>
+            </div>
+        </motion.div>
     );
 }

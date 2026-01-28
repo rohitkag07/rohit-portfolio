@@ -1,0 +1,41 @@
+.cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    mix-blend-mode: difference;
+}
+
+.hovering {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    mix-blend-mode: difference;
+}
+
+.clicking {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cursorRing {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(102, 126, 234, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, border 0.3s ease;
+}
+
+.hoveringRing {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(102, 126, 234, 0.8);
+}

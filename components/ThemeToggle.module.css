@@ -1,0 +1,31 @@
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.toggle:hover {
+    background: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+.icon {
+    color: var(--color-text-primary);
+    transition: color 0.3s ease;
+}
+
+.toggle:hover .icon {
+    color: white;
+}
