@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rohit Kag - Portfolio Website
 
-## Getting Started
+A modern, animated portfolio website built with Next.js, featuring advanced animations, interactive elements, and a premium design aesthetic.
 
-First, run the development server:
+## ✨ Features
+
+- 🎨 **Advanced Animations**: Particle effects, scroll-triggered animations, and 3D card tilts
+- 🖼️ **Professional Design**: Glassmorphism effects, gradient accents, and smooth transitions
+- 📱 **Fully Responsive**: Optimized for all devices and screen sizes
+- ♿ **Accessible**: Respects user preferences for reduced motion
+- ⚡ **Performance Optimized**: Built with Next.js 16 and modern web technologies
+- 🎭 **Interactive Elements**: Hover effects, micro-interactions, and smooth page transitions
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 16
+- **Language**: TypeScript
+- **Styling**: CSS Modules with custom design system
+- **Animations**: Framer Motion
+- **Particles**: tsParticles
+- **Icons**: Lucide React
+- **Scroll Animations**: React Intersection Observer
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/rohitkag07/rohit-portfolio.git
+
+# Navigate to project directory
+cd rohit-portfolio
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+rohit-portfolio/
+├── app/                    # Next.js app directory
+│   ├── globals.css        # Global styles and design tokens
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # React components
+│   ├── About.tsx          # About section with profile
+│   ├── Contact.tsx        # Contact form and info
+│   ├── Experience.tsx     # Work experience timeline
+│   ├── Hero.tsx           # Hero section with particles
+│   ├── Navbar.tsx         # Navigation bar
+│   ├── Projects.tsx       # Project showcase
+│   ├── Skills.tsx         # Skills with animated bars
+│   └── ParticleBackground.tsx  # Particle effect component
+├── hooks/                 # Custom React hooks
+│   ├── useAnimatedCounter.ts
+│   └── useScrollAnimation.ts
+├── public/                # Static assets
+│   ├── profile.jpg        # Profile photo
+│   └── resume.pdf         # Resume file
+└── package.json           # Dependencies and scripts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The portfolio uses a comprehensive design system with:
+- Custom CSS variables for colors, spacing, and typography
+- Glassmorphism effects with backdrop blur
+- Gradient accents and smooth transitions
+- Dark theme optimized for readability
+- Responsive breakpoints for all devices
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is open source and available under the [MIT License](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👤 Author
+
+**Rohit Kag**
+- Email: kag07rohit@gmail.com
+- GitHub: [@rohitkag07](https://github.com/rohitkag07)
+- LinkedIn: [Rohit Kag](https://linkedin.com/in/rohit-kag)
+
+## 🙏 Acknowledgments
+
+- Design inspiration from modern portfolio trends
+- Animation libraries: Framer Motion and tsParticles
+- Icons by Lucide React
