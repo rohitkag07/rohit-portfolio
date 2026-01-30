@@ -27,16 +27,16 @@ export default function ParticleBackground() {
                         value: 'transparent',
                     },
                 },
-                fpsLimit: 120,
+                fpsLimit: 60,
                 interactivity: {
                     events: {
                         onClick: {
-                            enable: true,
+                            enable: false,
                             mode: 'push',
                         },
                         onHover: {
                             enable: true,
-                            mode: 'repulse',
+                            mode: 'grab',
                         },
                         resize: {
                             enable: true,
@@ -44,12 +44,11 @@ export default function ParticleBackground() {
                         },
                     },
                     modes: {
-                        push: {
-                            quantity: 4,
-                        },
-                        repulse: {
-                            distance: 150,
-                            duration: 0.4,
+                        grab: {
+                            distance: 140,
+                            links: {
+                                opacity: 0.5
+                            }
                         },
                     },
                 },
@@ -59,9 +58,9 @@ export default function ParticleBackground() {
                     },
                     links: {
                         color: '#764ba2',
-                        distance: 150,
+                        distance: 120,
                         enable: true,
-                        opacity: 0.3,
+                        opacity: 0.2,
                         width: 1,
                     },
                     move: {
@@ -70,8 +69,8 @@ export default function ParticleBackground() {
                         outModes: {
                             default: 'bounce',
                         },
-                        random: false,
-                        speed: 1,
+                        random: true,
+                        speed: 0.8,
                         straight: false,
                     },
                     number: {
@@ -80,19 +79,19 @@ export default function ParticleBackground() {
                             width: 1920,
                             height: 1080
                         },
-                        value: 80,
+                        value: 30,
                     },
                     opacity: {
-                        value: 0.5,
+                        value: 0.3,
                     },
                     shape: {
                         type: 'circle',
                     },
                     size: {
-                        value: { min: 1, max: 3 },
+                        value: { min: 1, max: 2 },
                     },
                 },
-                detectRetina: true,
+                detectRetina: false,
             }}
             style={{
                 position: 'absolute',

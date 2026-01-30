@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon, Sun, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
 
@@ -15,7 +15,7 @@ export default function Navbar() {
             setIsScrolled(window.scrollY > 50);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -28,19 +28,26 @@ export default function Navbar() {
     }, [isDarkMode]);
 
     const navLinks = [
-        { href: '#home', label: 'Home' },
         { href: '#about', label: 'About' },
         { href: '#skills', label: 'Skills' },
         { href: '#projects', label: 'Projects' },
         { href: '#experience', label: 'Experience' },
-        { href: '#contact', label: 'Contact' },
     ];
 
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const offset = 80;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
             setIsMobileMenuOpen(false);
         }
     };
@@ -48,25 +55,23 @@ export default function Navbar() {
     return (
         <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.container}>
-                <a href="#home" className={styles.logo} onClick={(e) => scrollToSection(e, '#home')}>
-                    <span className="gradient-text">RK</span>
-                </a>
+                <div className={styles.navGroup}>
+                    <a href="#home" className={styles.logo} onClick={(e) => scrollToSection(e, '#home')}>
+                        <span className={styles.logoPrefix}>ROHIT</span>
+                        <span className={styles.logoSuffix}>KAG</span>
+                    </a>
 
-                {/* Desktop Navigation */}
-                <ul className={styles.navLinks}>
-                    {navLinks.map((link, index) => (
-                        <motion.li
-                            key={link.href}
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <a href={link.href} onClick={(e) => scrollToSection(e, link.href)}>
-                                {link.label}
-                            </a>
-                        </motion.li>
-                    ))}
-                </ul>
+                    {/* Desktop Navigation */}
+                    <ul className={styles.navLinks}>
+                        {navLinks.map((link) => (
+                            <li key={link.href}>
+                                <a href={link.href} onClick={(e) => scrollToSection(e, link.href)}>
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
                 <div className={styles.navActions}>
                     <button
@@ -74,8 +79,13 @@ export default function Navbar() {
                         onClick={() => setIsDarkMode(!isDarkMode)}
                         aria-label="Toggle theme"
                     >
-                        {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                        {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
                     </button>
+
+                    <a href="#contact" className={styles.ctaBtn} onClick={(e) => scrollToSection(e, '#contact')}>
+                        <span>Hire Me</span>
+                        <ArrowRight size={16} />
+                    </a>
 
                     <button
                         className={styles.mobileMenuToggle}
@@ -92,24 +102,24 @@ export default function Navbar() {
                 {isMobileMenuOpen && (
                     <motion.div
                         className={styles.mobileMenu}
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
                     >
                         <ul>
                             {navLinks.map((link) => (
-                                <motion.li
-                                    key={link.href}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                >
+                                <li key={link.href}>
                                     <a href={link.href} onClick={(e) => scrollToSection(e, link.href)}>
                                         {link.label}
                                     </a>
-                                </motion.li>
+                                </li>
                             ))}
+                            <li>
+                                <a href="#contact" className={styles.mobileCta} onClick={(e) => scrollToSection(e, '#contact')}>
+                                    Start a Project
+                                </a>
+                            </li>
                         </ul>
                     </motion.div>
                 )}

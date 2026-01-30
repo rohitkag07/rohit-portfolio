@@ -1,41 +1,42 @@
 .cursor {
     position: fixed;
-    width: 8px;
-    height: 8px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent-primary);
     border-radius: 50%;
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-    mix-blend-mode: difference;
+    transition: width 0.3s var(--transition-base), height 0.3s var(--transition-base), background 0.3s var(--transition-base);
+    box-shadow: 0 0 10px var(--color-accent-primary);
 }
 
 .hovering {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.9);
-    mix-blend-mode: difference;
+    width: 24px;
+    height: 24px;
+    background: white;
+    box-shadow: 0 0 20px white;
 }
 
 .clicking {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.7);
 }
 
 .cursorRing {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(102, 126, 234, 0.5);
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(99, 102, 241, 0.3);
     border-radius: 50%;
     pointer-events: none;
     z-index: 99998;
     transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease, border 0.3s ease;
+    transition: width 0.4s var(--transition-base), height 0.4s var(--transition-base), border 0.4s var(--transition-base);
 }
 
 .hoveringRing {
     width: 60px;
     height: 60px;
-    border-color: rgba(102, 126, 234, 0.8);
+    border-color: rgba(99, 102, 241, 0.6);
+    border-width: 2px;
 }

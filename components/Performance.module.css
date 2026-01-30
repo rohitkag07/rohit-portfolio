@@ -1,0 +1,119 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.statIcon {
+    color: var(--color-accent-primary);
+    width: 24px;
+    height: 24px;
+    margin-bottom: var(--spacing-md);
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.highlightCard {
+    padding: var(--spacing-xl);
+    height: 100%;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.headerIcon {
+    color: var(--color-accent-primary);
+    width: 28px;
+    height: 28px;
+}
+
+.cardHeader h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.sportsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.sportItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    transition: all var(--transition-fast);
+}
+
+.sportItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent-primary);
+    transform: translateX(5px);
+}
+
+.sportIcon {
+    font-size: 1.5rem;
+}
+
+.sportInfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.sportName {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.sportLevel {
+    font-size: 0.8125rem;
+    color: var(--color-accent-primary);
+    font-weight: 600;
+}
+
+.flagIcon {
+    color: var(--color-text-tertiary);
+    opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+}

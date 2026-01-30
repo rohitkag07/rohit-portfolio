@@ -15,11 +15,11 @@ export default function Hero() {
     };
 
     const roles = [
+        'AI Product Developer',
+        'Automation Specialist',
         'Tech Entrepreneur',
-        'Startup Founder',
         'Digital Innovator',
-        'Business Strategist',
-        'Problem Solver'
+        'Workflow Architect'
     ];
 
     // Animation variants for staggered entrance
@@ -28,46 +28,41 @@ export default function Hero() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2
+                staggerChildren: 0.1,
+                delayChildren: 0.3
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.7,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1]
             }
         }
     };
 
     const codeCardVariants = {
-        hidden: { opacity: 0, scale: 0.8, rotateY: -20, rotateX: 10 },
+        hidden: { opacity: 0, x: 50, rotateY: 20 },
         visible: {
             opacity: 1,
-            scale: 1,
+            x: 0,
             rotateY: 0,
-            rotateX: 0,
             transition: {
-                duration: 1,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                delay: 0.4
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.5
             }
         }
     };
 
     return (
         <section id="home" className={styles.hero}>
-            <div className={styles.auroraContainer}>
-                <div className={styles.aurora}></div>
-                <div className={styles.aurora2}></div>
-                <div className={styles.aurora3}></div>
-            </div>
+
             <ParticleBackground />
 
             <div className={styles.container}>
@@ -77,51 +72,44 @@ export default function Hero() {
                     initial="hidden"
                     animate="visible"
                 >
-                    <motion.div className={styles.greeting} variants={itemVariants}>
-                        <span className={styles.wave}>👋</span>
-                        <span>Hello, I'm</span>
+                    <motion.div className={styles.badge} variants={itemVariants}>
+                        <div className={styles.badgeDot}></div>
+                        <span>Available for AI & Automation Projects</span>
                     </motion.div>
 
                     <motion.h1 className={styles.name} variants={itemVariants}>
-                        <span className={styles.firstName}>Rohit</span>{' '}
-                        <span className={styles.lastName}>Kag</span>
+                        <span className={styles.firstName}>ROHIT</span>
+                        <span className={styles.lastName}> KAG</span>
                     </motion.h1>
 
-                    <motion.h2 className={styles.title} variants={itemVariants}>
-                        <span className={styles.staticTitle}>Computer Science Engineer &</span>
-                        <br />
+                    <motion.div className={styles.titleWrapper} variants={itemVariants}>
                         <TypeWriter words={roles} className={styles.dynamicTitle} />
-                    </motion.h2>
+                    </motion.div>
 
                     <motion.p className={styles.description} variants={itemVariants}>
-                        <Sparkles size={16} className={styles.sparkle} />
-                        Passionate about building businesses and solving real-world problems through innovation.
-                        Leveraging AI and modern technology to create impactful solutions and drive growth.
+                        Empowering businesses with <strong>Agentic AI Workflows</strong> and
+                        intelligent automation. B.Tech graduate dedicated to building the
+                        future of digital innovation.
                     </motion.p>
 
                     <motion.div className={styles.cta} variants={itemVariants}>
                         <motion.a
                             href="#contact"
-                            className={styles.primaryBtn}
-                            whileHover={{
-                                scale: 1.05,
-                                boxShadow: '0 0 30px rgba(102, 126, 234, 0.6), 0 0 60px rgba(118, 75, 162, 0.3)'
-                            }}
+                            className="btn btn-primary"
+                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <Mail size={20} />
-                            <span>Get In Touch</span>
-                            <div className={styles.btnGlow}></div>
+                            <span>Hire Me</span>
                         </motion.a>
                         <motion.a
-                            href="/resume.pdf"
-                            download
+                            href="/rohit-kag-resume.pdf"
+                            download="rohit-kag-resume.pdf"
                             className={styles.secondaryBtn}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             <Download size={20} />
-                            <span>Download Resume</span>
+                            <span>Download CV</span>
                         </motion.a>
                     </motion.div>
 
@@ -129,7 +117,7 @@ export default function Hero() {
                         {[
                             { href: 'https://github.com/rohitkag', icon: Github, label: 'GitHub' },
                             { href: 'https://linkedin.com/in/rohitkag', icon: Linkedin, label: 'LinkedIn' },
-                            { href: 'mailto:kag770rohit@gmail.com', icon: Mail, label: 'Email' }
+                            { href: 'mailto:kag07rohit@gmail.com', icon: Mail, label: 'Email' }
                         ].map((item, index) => (
                             <motion.a
                                 key={item.label}
@@ -138,16 +126,10 @@ export default function Hero() {
                                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                 aria-label={item.label}
                                 className={styles.socialLink}
-                                whileHover={{
-                                    y: -8,
-                                    boxShadow: '0 10px 30px rgba(102, 126, 234, 0.4)'
-                                }}
+                                whileHover={{ y: -5, color: 'var(--color-accent-primary)' }}
                                 whileTap={{ scale: 0.9 }}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.8 + index * 0.1 }}
                             >
-                                <item.icon size={22} />
+                                <item.icon size={20} />
                             </motion.a>
                         ))}
                     </motion.div>

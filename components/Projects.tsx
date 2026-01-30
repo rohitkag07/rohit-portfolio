@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Bot, Zap, ShoppingCart, Droplets, Info } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { MouseEvent } from 'react';
@@ -14,65 +14,58 @@ export default function Projects() {
 
     const projects = [
         {
-            title: 'KAG Batteries',
-            subtitle: 'Business Website',
-            description: 'Modern business website for KAG Batteries - a leading automotive and inverter battery company with premium product showcase.',
-            tech: ['Next.js', 'Modern UI', 'Responsive', 'SEO'],
-            features: ['Product Catalog', 'Gallery', 'Contact Form', 'Brochures'],
-            github: '#',
-            live: 'https://www.kagbatteries.in/',
-            gradient: 'linear-gradient(135deg, #f59e0b 0%, #dc2626 100%)',
-            icon: '🔋'
+            title: 'Kag Batteries',
+            subtitle: 'AI-Enhanced E-Commerce',
+            description: 'Advanced platform for battery distribution featuring integrated AI chatbots and automated inventory management loops.',
+            tech: ['React', 'Next.js', 'LLM Integration', 'Vercel'],
+            features: ['AI Chatbot Integration', 'Automated Inventory', 'Real-time Stock', 'Premium Analytics'],
+            github: 'https://github.com/rohitkag/kag-batteries',
+            live: 'https://kagbatteries.vercel.app/',
+            gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+            icon: <ShoppingCart size={24} />
         },
         {
-            title: 'Onlinegharke',
-            subtitle: 'E-Commerce Platform',
-            description: 'Full-stack e-commerce platform enabling online shopping for household items with secure checkout.',
-            tech: ['E-Commerce', 'Payments', 'Inventory', 'Logistics'],
-            features: ['User Authentication', 'Product Management', 'Shopping Cart', 'Order Tracking'],
+            title: 'AI Workflow Automation',
+            subtitle: 'Enterprise Efficiency',
+            description: 'Intelligent business process automation system leveraging Claude API to streamline complex operational workflows.',
+            tech: ['Antigravity', 'Claude API', 'Python', 'Workflows'],
+            features: ['Recursive Tasking', 'API Orchestration', 'Cost Optimization', 'Process Mapping'],
             github: '#',
             live: '#',
-            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            icon: '🛒'
+            gradient: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)',
+            icon: <Zap size={24} />
         },
         {
-            title: 'Swasthya 2016',
-            subtitle: 'Blood Donation Platform',
-            description: 'Social impact application connecting blood donors with recipients for life-saving connections.',
-            tech: ['Web App', 'Database', 'Maps', 'Notifications'],
-            features: ['Donor Registration', 'Emergency Requests', 'Location Search', 'Notifications'],
+            title: 'Moltbot AI Assistant',
+            subtitle: 'Autonomous Support',
+            description: 'Personalized AI assistant deployed on AWS, designed to handle support tickets and automate customer interactions.',
+            tech: ['AWS', 'Bolt', 'API Integration', 'Node.js'],
+            features: ['Live Support Loop', 'Adaptive Learning', 'Cloud Scalability', 'Webhook Triggers'],
             github: '#',
             live: '#',
-            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-            icon: '🩸'
+            gradient: 'linear-gradient(135deg, #a855f7 0%, #7e22ce 100%)',
+            icon: <Bot size={24} />
         },
         {
-            title: 'Portfolio Website',
-            subtitle: 'Personal Brand',
-            description: 'Responsive portfolio showcasing entrepreneurial journey with premium animations and modern design.',
-            tech: ['Next.js', 'Animations', 'Dark Mode', 'Responsive'],
-            features: ['Premium UI', 'Smooth Animations', 'Contact Form', 'Mobile Friendly'],
+            title: 'BloodConnect',
+            subtitle: 'Social Impact Tech',
+            description: 'Real-time platform connecting blood donors with urgent recipients, facilitating life-saving digital bridges.',
+            tech: ['Web App', 'Real-time DB', 'Geolocation', 'Auth'],
+            features: ['Urgent Request Loop', 'Donor Mapping', 'Live Notifications', 'Verified Profiles'],
             github: '#',
             live: '#',
-            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-            icon: '💼'
+            gradient: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
+            icon: <Droplets size={24} />
         }
     ];
 
     return (
         <section id="projects" className="section">
             <div className="container">
-                <motion.div
-                    className={styles.header}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="section-title">Featured Projects</h2>
-                    <p className={styles.subtitle}>
-                        A selection of projects I've built with passion and precision
-                    </p>
-                </motion.div>
+                <div className="section-title">
+                    <span>Portfolio</span>
+                    <h2>Technical Projects</h2>
+                </div>
 
                 <div ref={sectionRef} className={styles.projectsGrid}>
                     {projects.map((project, index) => (
@@ -89,19 +82,7 @@ export default function Projects() {
     );
 }
 
-interface Project {
-    title: string;
-    subtitle: string;
-    description: string;
-    tech: string[];
-    features: string[];
-    github: string;
-    live: string;
-    gradient: string;
-    icon: string;
-}
-
-function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
+function ProjectCard({ project, index, inView }: { project: any; index: number; inView: boolean }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -114,90 +95,70 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
     return (
         <motion.div
             className={styles.projectCard}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
+            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             onMouseMove={handleMouseMove}
-            whileHover={{ y: -8 }}
         >
-            {/* Spotlight effect */}
             <motion.div
                 className={styles.spotlight}
                 style={{
                     background: useMotionTemplate`
                         radial-gradient(
-                            400px circle at ${mouseX}px ${mouseY}px,
-                            rgba(102, 126, 234, 0.15),
+                            450px circle at ${mouseX}px ${mouseY}px,
+                            rgba(99, 102, 241, 0.1),
                             transparent 80%
                         )
                     `
                 }}
             />
 
-            {/* Gradient border */}
-            <div className={styles.gradientBorder} style={{ background: project.gradient }} />
-
-            <div className={styles.cardContent}>
-                <div className={styles.cardHeader}>
-                    <motion.span
-                        className={styles.projectIcon}
-                        whileHover={{ scale: 1.2, rotate: 10 }}
-                    >
-                        {project.icon}
-                    </motion.span>
-                    <div>
-                        <h3 className={styles.projectTitle}>{project.title}</h3>
-                        <span className={styles.projectSubtitle}>{project.subtitle}</span>
-                    </div>
+            <div className={styles.cardHeader}>
+                <div className={styles.iconWrapper} style={{ background: project.gradient }}>
+                    {project.icon}
                 </div>
-
-                <p className={styles.projectDescription}>{project.description}</p>
-
-                <div className={styles.techStack}>
-                    {project.tech.map((tech, techIndex) => (
-                        <motion.span
-                            key={techIndex}
-                            className={styles.techTag}
-                            whileHover={{ scale: 1.05, y: -2 }}
-                        >
-                            {tech}
-                        </motion.span>
-                    ))}
+                <div className={styles.titleArea}>
+                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                    <span className={styles.projectSubtitle}>{project.subtitle}</span>
                 </div>
+            </div>
 
-                <div className={styles.features}>
-                    {project.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className={styles.feature}>
-                            <span className={styles.featureCheck}>✓</span>
-                            {feature}
-                        </div>
-                    ))}
-                </div>
+            <p className={styles.projectDescription}>{project.description}</p>
 
+            <div className={styles.techStack}>
+                {project.tech.map((tech: string, techIndex: number) => (
+                    <span key={techIndex} className={styles.techTag}>
+                        {tech}
+                    </span>
+                ))}
+            </div>
+
+            <div className={styles.footer}>
                 <div className={styles.projectLinks}>
                     <motion.a
                         href={project.github}
-                        className={styles.linkBtn}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className={styles.linkIcon}
+                        whileHover={{ y: -3, color: 'var(--color-accent-primary)' }}
                     >
-                        <Github size={18} />
-                        <span>Code</span>
+                        <Github size={20} />
                     </motion.a>
-                    <motion.a
-                        href={project.live}
-                        className={styles.linkBtnPrimary}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <span>Live Demo</span>
-                        <ArrowUpRight size={18} />
-                    </motion.a>
+                    {project.live !== '#' && (
+                        <motion.a
+                            href={project.live}
+                            className={styles.linkIcon}
+                            whileHover={{ y: -3, color: 'var(--color-accent-primary)' }}
+                        >
+                            <ExternalLink size={20} />
+                        </motion.a>
+                    )}
                 </div>
+                <motion.div
+                    className={styles.detailsBtn}
+                    whileHover={{ x: 5 }}
+                >
+                    <span>View Case Study</span>
+                    <ArrowUpRight size={16} />
+                </motion.div>
             </div>
         </motion.div>
     );
