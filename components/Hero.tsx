@@ -117,7 +117,7 @@ export default function Hero() {
                         {[
                             { href: 'https://github.com/rohitkag07', icon: Github, label: 'GitHub' },
                             { href: 'https://www.linkedin.com/in/rohit-kag-7b3943b9/', icon: Linkedin, label: 'LinkedIn' },
-                            { href: 'https://wa.me/919876543210', icon: MessageCircle, label: 'WhatsApp' },
+                            { href: 'https://wa.me/917869161842', icon: MessageCircle, label: 'WhatsApp' },
                             { href: 'mailto:kag07rohit@gmail.com', icon: Mail, label: 'Email' }
                         ].map((item, index) => (
                             <motion.a
