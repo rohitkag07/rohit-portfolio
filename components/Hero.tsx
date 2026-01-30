@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 import ParticleBackground from './ParticleBackground';
@@ -115,8 +115,9 @@ export default function Hero() {
 
                     <motion.div className={styles.social} variants={itemVariants}>
                         {[
-                            { href: 'https://github.com/rohitkag', icon: Github, label: 'GitHub' },
-                            { href: 'https://linkedin.com/in/rohitkag', icon: Linkedin, label: 'LinkedIn' },
+                            { href: 'https://github.com/rohitkag07', icon: Github, label: 'GitHub' },
+                            { href: 'https://www.linkedin.com/in/rohit-kag-7b3943b9/', icon: Linkedin, label: 'LinkedIn' },
+                            { href: 'https://wa.me/919876543210', icon: MessageCircle, label: 'WhatsApp' },
                             { href: 'mailto:kag07rohit@gmail.com', icon: Mail, label: 'Email' }
                         ].map((item, index) => (
                             <motion.a

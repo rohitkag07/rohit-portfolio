@@ -1,14 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,13 +18,10 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Force light theme always
     useEffect(() => {
-        if (isDarkMode) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-            document.documentElement.removeAttribute('data-theme');
-        }
-    }, [isDarkMode]);
+        document.documentElement.removeAttribute('data-theme');
+    }, []);
 
     const navLinks = [
         { href: '#about', label: 'About' },
@@ -74,14 +70,6 @@ export default function Navbar() {
                 </div>
 
                 <div className={styles.navActions}>
-                    <button
-                        className={styles.themeToggle}
-                        onClick={() => setIsDarkMode(!isDarkMode)}
-                        aria-label="Toggle theme"
-                    >
-                        {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-                    </button>
-
                     <a href="#contact" className={styles.ctaBtn} onClick={(e) => scrollToSection(e, '#contact')}>
                         <span>Hire Me</span>
                         <ArrowRight size={16} />
