@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, Calendar, GraduationCap, Award, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, GraduationCap, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styles from './Experience.module.css';
@@ -12,6 +12,20 @@ export default function Experience() {
     });
 
     const experiences = [
+        {
+            role: 'AI Solutions Architect — Multi-Agent Systems',
+            company: 'Self-Initiated Engineering Projects',
+            period: '2024 - Present',
+            location: 'Indore, India',
+            description: 'Architected and deployed production-grade multi-agent ecosystems on Google Cloud.',
+            achievements: [
+                'Built enterprise orchestration system using Google ADK — Sequential, Parallel & Loop agent workflows',
+                'Engineered custom MCP Servers: External API Gateway, Serverless Function Executor & Secure DB Toolbox (PostgreSQL)',
+                'Developed master Orchestrator agent using Agent-to-Agent (A2A) protocol for dynamic task delegation',
+                'Implemented Interceptor Pattern with Callbacks/Plugins for rate limiting, cooldown & prompt-injection filtering',
+                'Containerised entire agentic ecosystem with Docker & deployed on Google Cloud Run via Cloud Build'
+            ]
+        },
         {
             role: 'AI Product Development',
             company: 'Self-Initiated Projects',

@@ -2,13 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Video, Terminal, Cpu, Database, Globe, Layers, Zap } from 'lucide-react';
+import { Brain, Video, Terminal, Cpu, Database, Zap } from 'lucide-react';
 import styles from './Skills.module.css';
-
-interface Skill {
-    name: string;
-    icon?: any;
-}
 
 interface SkillCategory {
     title: string;
@@ -24,13 +19,36 @@ export default function Skills() {
 
     const skillCategories: SkillCategory[] = [
         {
+            title: 'Multi-Agent Systems',
+            icon: Cpu,
+            skills: [
+                'Google Agent Dev Kit (ADK)',
+                'Agent-to-Agent (A2A) Protocol',
+                'Model Context Protocol (MCP)',
+                'Orchestrator & Specialist Agents',
+                'Interceptor Pattern & Callbacks'
+            ]
+        },
+        {
             title: 'AI & Automation',
             icon: Brain,
             skills: [
                 'Agentic AI Workflows',
-                'LLM Integration',
-                'AWS & Vercel Deployment',
-                'Claude Code'
+                'LLM Integration & Claude API',
+                'Sequential / Parallel / Loop Agents',
+                'Stateful Agent Memory',
+                'Claude Code & AWS Deployment'
+            ]
+        },
+        {
+            title: 'Cloud & Infrastructure',
+            icon: Database,
+            skills: [
+                'Google Cloud Run & Cloud Build',
+                'Cloud SQL (PostgreSQL)',
+                'Docker & Artifact Registry',
+                'Secret Manager & IAM',
+                'Serverless Microservices'
             ]
         },
         {
@@ -47,9 +65,9 @@ export default function Skills() {
             title: 'Technical Stack',
             icon: Terminal,
             skills: [
+                'React & Next.js',
                 'Git & GitHub',
                 'Java & Web Dev',
-                'React & Next.js',
                 'API Integration'
             ]
         }

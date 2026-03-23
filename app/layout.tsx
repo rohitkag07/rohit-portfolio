@@ -3,13 +3,30 @@ import "./globals.css";
 import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
-  title: "Rohit Kag - Tech Entrepreneur & Digital Innovator",
-  description: "Tech Entrepreneur passionate about building businesses and solving real-world problems through innovation. Leveraging AI and modern technology to create impactful solutions.",
-  keywords: ["Rohit Kag", "Tech Entrepreneur", "Startup Founder", "Digital Innovator", "Business Strategy", "AI Tools", "Innovation"],
+  title: "Rohit Kag - AI Solutions Architect & Multi-Agent Systems Engineer",
+  description: "AI Solutions Architect specialising in Enterprise Multi-Agent Systems using Google ADK, Agent-to-Agent (A2A) Protocol, and Model Context Protocol (MCP). Deploying autonomous AI workforces on Google Cloud Run with stateful memory and enterprise guardrails.",
+  keywords: [
+    "Rohit Kag",
+    "AI Solutions Architect",
+    "Multi-Agent Systems Engineer",
+    "Google Agent Development Kit",
+    "ADK",
+    "Agent-to-Agent Protocol",
+    "A2A",
+    "Model Context Protocol",
+    "MCP",
+    "Google Cloud Run",
+    "Agentic AI",
+    "LLM Orchestration",
+    "Vertex AI",
+    "Tech Entrepreneur",
+    "Digital Innovator",
+    "AI Automation"
+  ],
   authors: [{ name: "Rohit Kag" }],
   openGraph: {
-    title: "Rohit Kag - Tech Entrepreneur & Digital Innovator",
-    description: "Tech Entrepreneur passionate about building businesses and driving innovation",
+    title: "Rohit Kag - AI Solutions Architect & Multi-Agent Systems Engineer",
+    description: "Building enterprise-grade autonomous AI agent networks with Google ADK, A2A & MCP on Google Cloud.",
     type: "website",
   },
 };

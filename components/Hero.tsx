@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles, MessageCircle } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 import ParticleBackground from './ParticleBackground';
@@ -15,14 +15,13 @@ export default function Hero() {
     };
 
     const roles = [
-        'AI Product Developer',
-        'Automation Specialist',
+        'AI Solutions Architect',
+        'Multi-Agent Systems Engineer',
+        'Workflow Automation Expert',
         'Tech Entrepreneur',
-        'Digital Innovator',
-        'Workflow Architect'
+        'Digital Innovator'
     ];
 
-    // Animation variants for staggered entrance
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -74,7 +73,7 @@ export default function Hero() {
                 >
                     <motion.div className={styles.badge} variants={itemVariants}>
                         <div className={styles.badgeDot}></div>
-                        <span>Available for AI & Automation Projects</span>
+                        <span>Available for AI &amp; Multi-Agent Projects</span>
                     </motion.div>
 
                     <motion.h1 className={styles.name} variants={itemVariants}>
@@ -87,9 +86,9 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.p className={styles.description} variants={itemVariants}>
-                        Empowering businesses with <strong>Agentic AI Workflows</strong> and
-                        intelligent automation. B.Tech graduate dedicated to building the
-                        future of digital innovation.
+                        Building <strong>Enterprise Multi-Agent AI Systems</strong> with Google ADK, A2A &amp; MCP —
+                        deploying autonomous agent workforces on <strong>Google Cloud</strong> with code-level
+                        guardrails and stateful memory.
                     </motion.p>
 
                     <motion.div className={styles.cta} variants={itemVariants}>
@@ -119,7 +118,7 @@ export default function Hero() {
                             { href: 'https://www.linkedin.com/in/rohit-kag-7b3943b9/', icon: Linkedin, label: 'LinkedIn' },
                             { href: 'https://wa.me/917869161842', icon: MessageCircle, label: 'WhatsApp' },
                             { href: 'mailto:kag07rohit@gmail.com', icon: Mail, label: 'Email' }
-                        ].map((item, index) => (
+                        ].map((item) => (
                             <motion.a
                                 key={item.label}
                                 href={item.href}
@@ -142,11 +141,7 @@ export default function Hero() {
                         variants={codeCardVariants}
                         initial="hidden"
                         animate="visible"
-                        whileHover={{
-                            scale: 1.03,
-                            rotateY: 5,
-                            rotateX: -5,
-                        }}
+                        whileHover={{ scale: 1.03, rotateY: 5, rotateX: -5 }}
                     >
                         <div className={styles.cardHeader}>
                             <div className={styles.dots}>
@@ -154,12 +149,12 @@ export default function Hero() {
                                 <span className={styles.dot} style={{ background: '#ffbd2e' }}></span>
                                 <span className={styles.dot} style={{ background: '#27c93f' }}></span>
                             </div>
-                            <span className={styles.fileName}>entrepreneur.js</span>
+                            <span className={styles.fileName}>agentverse.py</span>
                         </div>
                         <div className={styles.code}>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>1</span>
-                                <span className={styles.keyword}>const</span> entrepreneur = {'{'}
+                                <span className={styles.keyword}>architect</span> = {'{'}
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>2</span>
@@ -167,48 +162,36 @@ export default function Hero() {
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>3</span>
-                                &nbsp;&nbsp;<span className={styles.property}>strengths</span>: [<span className={styles.string}>"AI Tools"</span>, <span className={styles.string}>"Strategy"</span>, <span className={styles.string}>"Innovation"</span>],
+                                &nbsp;&nbsp;<span className={styles.property}>stack</span>: [<span className={styles.string}>"ADK"</span>, <span className={styles.string}>"A2A"</span>, <span className={styles.string}>"MCP"</span>],
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>4</span>
-                                &nbsp;&nbsp;<span className={styles.property}>mission</span>: <span className={styles.string}>"Building the Future"</span>,
+                                &nbsp;&nbsp;<span className={styles.property}>cloud</span>: <span className={styles.string}>"Google Cloud Run"</span>,
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>5</span>
-                                &nbsp;&nbsp;<span className={styles.property}>openToConnect</span>: <span className={styles.boolean}>true</span>
+                                &nbsp;&nbsp;<span className={styles.property}>agents</span>: <span className={styles.string}>"∞ scalable"</span>,
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>6</span>
+                                &nbsp;&nbsp;<span className={styles.property}>openToConnect</span>: <span className={styles.boolean}>true</span>
+                            </div>
+                            <div className={styles.codeLine}>
+                                <span className={styles.lineNumber}>7</span>
                                 {'}'};
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Floating elements */}
                     <motion.div
                         className={styles.floatingShape1}
-                        animate={{
-                            y: [-20, 20, -20],
-                            rotate: [0, 360],
-                            scale: [1, 1.1, 1]
-                        }}
-                        transition={{
-                            duration: 8,
-                            repeat: Infinity,
-                            ease: 'easeInOut'
-                        }}
+                        animate={{ y: [-20, 20, -20], rotate: [0, 360], scale: [1, 1.1, 1] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
                     />
                     <motion.div
                         className={styles.floatingShape2}
-                        animate={{
-                            y: [20, -20, 20],
-                            rotate: [360, 0]
-                        }}
-                        transition={{
-                            duration: 10,
-                            repeat: Infinity,
-                            ease: 'easeInOut'
-                        }}
+                        animate={{ y: [20, -20, 20], rotate: [360, 0] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
                     />
                 </div>
             </div>
@@ -220,10 +203,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5, duration: 0.6 }}
-                whileHover={{
-                    scale: 1.1,
-                    boxShadow: '0 0 20px rgba(102, 126, 234, 0.5)'
-                }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
             >
                 <ArrowDown size={24} className={styles.bounceArrow} />
@@ -231,4 +211,3 @@ export default function Hero() {
         </section>
     );
 }
-
