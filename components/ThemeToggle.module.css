@@ -18,7 +18,7 @@
 .toggle:hover {
     background: var(--color-accent-primary);
     border-color: var(--color-accent-primary);
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 0 20px rgba(212, 168, 83, 0.4);
 }
 
 .icon {

@@ -24,8 +24,8 @@
 
 .contactInfo>div:hover,
 .formSection>div:hover {
-    border-color: rgba(102, 126, 234, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(212, 168, 83, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 30px -10px rgba(212, 168, 83, 0.1);
 }
 
 .contactInfo h3,
@@ -43,7 +43,7 @@
     content: '';
     width: 4px;
     height: 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-accent-gradient);
     border-radius: 2px;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .infoItem:hover {
-    background: rgba(102, 126, 234, 0.05);
+    background: var(--color-accent-subtle);
 }
 
 .infoItem svg {
@@ -123,7 +123,7 @@
 }
 
 .social a:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-accent-gradient);
     border-color: transparent;
     color: white;
 }
@@ -147,8 +147,8 @@
 }
 
 .achievement:hover {
-    background: rgba(102, 126, 234, 0.05);
-    border-color: rgba(102, 126, 234, 0.2);
+    background: var(--color-accent-subtle);
+    border-color: rgba(212, 168, 83, 0.2);
     transform: translateX(5px);
 }
 
@@ -172,18 +172,19 @@
 }
 
 .hobbyTags span {
-    background: rgba(102, 126, 234, 0.1);
+    background: var(--color-accent-subtle);
     color: var(--color-text-secondary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--glass-border);
 }
 
 .hobbyTags span:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-accent-gradient);
     color: white;
+    border-color: transparent;
     transform: scale(1.05);
 }
 
@@ -208,7 +209,7 @@
 
 .formGroup input,
 .formGroup textarea {
-    background: rgba(102, 126, 234, 0.05);
+    background: var(--color-bg-tertiary);
     border: 2px solid var(--glass-border);
     border-radius: 12px;
     padding: 1rem 1.25rem;
@@ -227,8 +228,8 @@
 .formGroup textarea:focus {
     outline: none;
     border-color: var(--color-accent-primary);
-    background: rgba(102, 126, 234, 0.08);
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    background: var(--color-bg-tertiary);
+    box-shadow: 0 0 0 4px rgba(212, 168, 83, 0.12);
 }
 
 .formGroup textarea {
