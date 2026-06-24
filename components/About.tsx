@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Code, Rocket, Users, Trophy, Brain, Zap, Network } from 'lucide-react';
+import { Code, Rocket, Users, Trophy, Brain, Network } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styles from './About.module.css';
@@ -49,16 +49,14 @@ export default function About() {
                             </div>
                             <div>
                                 <h3 className={styles.nameHeader}>ROHIT KAG</h3>
-                                <p className={styles.lead}>AI Solutions Architect &amp; Multi-Agent Systems Engineer</p>
+                                <p className={styles.lead}>AI Automation Developer &amp; Full-Stack Product Builder</p>
                             </div>
                         </div>
                         <p className={styles.description}>
-                            A visionary engineer specialising in <strong>Enterprise Multi-Agent AI Systems</strong> and
-                            scalable cloud-native architectures. I design autonomous teams of AI agents that manage
-                            their own state, communicate over networks via the <strong>A2A protocol</strong>, and
-                            interact with databases &amp; APIs safely through <strong>Model Context Protocol (MCP)</strong> servers.
-                            My background in Computer Science and competitive sports drives the discipline I bring
-                            to every deployment on <strong>Google Cloud</strong>.
+                            I build practical <strong>React/Next.js products</strong>, Supabase-backed dashboards,
+                            Express/FastAPI services, and <strong>AI automation workflows</strong> for Indian business
+                            operations. My work spans ecommerce, CRM, photography, real estate, compliance, healthcare,
+                            and internal tools, with a focus on turning offline workflows into deployable software.
                         </p>
                     </motion.div>
 
@@ -71,8 +69,8 @@ export default function About() {
                         transition={{ delay: 0.1 }}
                     >
                         <Network className={styles.icon} />
-                        <h3>Multi-Agent Architect</h3>
-                        <p>Designing autonomous agent networks with ADK, A2A &amp; MCP on Google Cloud.</p>
+                        <h3>AI Workflow Architect</h3>
+                        <p>Designing agentic workflows, tool gateways, RAG flows, and automation systems for business operations.</p>
                     </motion.div>
 
                     {/* AI Competency */}
@@ -85,7 +83,7 @@ export default function About() {
                     >
                         <Brain className={styles.icon} />
                         <h3>AI Workflow Engineer</h3>
-                        <p>Building agentic pipelines — Sequential, Parallel &amp; Loop — with enterprise guardrails.</p>
+                        <p>Building LLM-assisted product workflows with Claude/OpenAI SDKs, local Ollama models, and structured data.</p>
                     </motion.div>
 
                     {/* Technical Stack */}
@@ -98,7 +96,7 @@ export default function About() {
                     >
                         <Code className={styles.icon} />
                         <h3>Full Stack</h3>
-                        <p>Specialised in React, Next.js, Cloud Run &amp; microservice API architecture.</p>
+                        <p>Specialised in React, Next.js, TypeScript, Supabase, Prisma, Express, FastAPI, and API integration.</p>
                     </motion.div>
 
                     {/* Entrepreneurship */}
@@ -113,7 +111,7 @@ export default function About() {
                             <Rocket className={styles.icon} />
                             <div>
                                 <h3>Entrepreneurial Edge</h3>
-                                <p>Co-founded KEF Global and scaled Kickstart BBQ to 4 outlets. I build AI with growth in mind.</p>
+                                <p>Co-founded KEF Global and scaled Kickstart BBQ to 4 outlets. I build software with business outcomes in mind.</p>
                             </div>
                         </div>
                     </motion.div>
@@ -127,8 +125,8 @@ export default function About() {
                         transition={{ delay: 0.4 }}
                     >
                         <Users className={styles.icon} />
-                        <h3>Social Impact</h3>
-                        <p>Created blood donation platforms saving lives through tech.</p>
+                        <h3>Business Digitization</h3>
+                        <p>Built product systems for Xero Seven, KAG Batteries, X7 Photography, X7 RealEstate, and CA workflows.</p>
                     </motion.div>
 
                     {/* Achievements */}

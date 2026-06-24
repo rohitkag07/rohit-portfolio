@@ -11,14 +11,15 @@ import GrainOverlay from '@/components/GrainOverlay';
 import Marquee from '@/components/Marquee';
 
 const techStack = [
-  'Innovation', 'Startups', 'E-Commerce', 'AI Tools', 'Digital Strategy',
-  'Business Growth', 'Product Vision', 'Leadership', 'Problem Solving', 'Automation'
+  'React', 'Next.js', 'TypeScript', 'Supabase', 'Prisma',
+  'Express', 'FastAPI', 'AI Automation', 'RAG', 'Vercel'
 ];
 
 export default function Home() {
   return (
     <main>
       <GrainOverlay />
+      <CustomCursor />
       <Navbar />
       <Hero />
       <div style={{
@@ -37,4 +38,3 @@ export default function Home() {
     </main>
   );
 }
-

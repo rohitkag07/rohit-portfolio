@@ -84,8 +84,29 @@ html {
   font-size: 16px;
 }
 
+/* Skip link */
+.skipLink {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: var(--z-overlay);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  box-shadow: var(--glass-shadow);
+  transform: translateY(-200%);
+  transition: transform var(--transition-fast);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   line-height: 1.6;
@@ -102,6 +123,12 @@ body {
   color: white;
 }
 
+/* Focus styling */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+}
+
 /* ===================================
    TYPOGRAPHY
    =================================== */
@@ -112,7 +139,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   line-height: 1.1;
   color: var(--color-text-primary);

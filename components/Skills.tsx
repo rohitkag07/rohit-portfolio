@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Video, Terminal, Cpu, Database, Zap } from 'lucide-react';
+import { Brain, Cloud, Database, Server, Terminal, Zap } from 'lucide-react';
 import styles from './Skills.module.css';
+
+import type { LucideIcon } from 'lucide-react';
 
 interface SkillCategory {
     title: string;
-    icon: any;
+    icon: LucideIcon;
     skills: string[];
 }
 
@@ -19,56 +21,58 @@ export default function Skills() {
 
     const skillCategories: SkillCategory[] = [
         {
-            title: 'Multi-Agent Systems',
-            icon: Cpu,
+            title: 'Frontend Engineering',
+            icon: Terminal,
             skills: [
-                'Google Agent Dev Kit (ADK)',
-                'Agent-to-Agent (A2A) Protocol',
-                'Model Context Protocol (MCP)',
-                'Orchestrator & Specialist Agents',
-                'Interceptor Pattern & Callbacks'
+                'React & Next.js App Router',
+                'TypeScript & Vite',
+                'TailwindCSS & CSS Modules',
+                'Dashboards & Admin Panels',
+                'Responsive Product UI'
             ]
         },
         {
             title: 'AI & Automation',
             icon: Brain,
             skills: [
-                'Agentic AI Workflows',
-                'LLM Integration & Claude API',
-                'Sequential / Parallel / Loop Agents',
-                'Stateful Agent Memory',
-                'Claude Code & AWS Deployment'
+                'LLM Workflow Design',
+                'Claude / OpenAI / Anthropic SDKs',
+                'Agent Routing & Tool Gateways',
+                'RAG with Ollama & ChromaDB',
+                'SSE / Event-Driven Concepts'
             ]
         },
         {
-            title: 'Cloud & Infrastructure',
+            title: 'Backend & Data',
             icon: Database,
             skills: [
-                'Google Cloud Run & Cloud Build',
-                'Cloud SQL (PostgreSQL)',
-                'Docker & Artifact Registry',
-                'Secret Manager & IAM',
-                'Serverless Microservices'
+                'Node.js & Express APIs',
+                'FastAPI Services',
+                'Supabase Auth & RLS',
+                'PostgreSQL & Prisma',
+                'SQLite Local Persistence'
             ]
         },
         {
-            title: 'Content Creation',
-            icon: Video,
+            title: 'Products Built',
+            icon: Server,
             skills: [
-                'Kling AI & HeyGen',
-                'ElevenLabs Voice',
-                'Video Production',
-                'Digital Marketing'
+                'Xero Seven Agency OS',
+                'KAG Dealer CRM',
+                'X7 Photography OS',
+                'X7 RealEstate OS',
+                'X7 CA Platform'
             ]
         },
         {
-            title: 'Technical Stack',
-            icon: Terminal,
+            title: 'Deployment & Tools',
+            icon: Cloud,
             skills: [
-                'React & Next.js',
+                'Vercel Deployment',
                 'Git & GitHub',
-                'Java & Web Dev',
-                'API Integration'
+                'Cloud Run-Style Services',
+                'Razorpay Foundations',
+                'Vitest / Playwright Basics'
             ]
         }
     ];

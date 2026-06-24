@@ -1,19 +1,16 @@
-# Resume PDF Placeholder
+# Resume PDF
 
-## To Add Your Resume:
+## Current Resume Asset
 
-1. **Create your resume** using:
-   - Canva (free templates): https://www.canva.com/resumes/templates/
-   - Google Docs (export as PDF)
-   - Microsoft Word (export as PDF)
-   - LaTeX (Overleaf)
-   - Resume builders (Resume.io, Novoresume, etc.)
+The portfolio download button points to:
 
-2. **Export as PDF** with filename: `resume.pdf`
+- `public/rohit-kag-it-resume.pdf`
 
-3. **Place it in this folder** (`/public/resume.pdf`)
+Legacy copies are also kept for older links:
 
-4. **The download button will automatically work!**
+- `public/resume.pdf`
+- `public/rohit-kag-resume.pdf`
+- `public/Rohit_Kag_Resume_Enhanced.pdf`
 
 ## Resume Tips:
 
@@ -32,7 +29,4 @@
 - Include keywords from job descriptions
 - Save as PDF (not Word doc)
 
----
-
-**For now, the download button will attempt to download this placeholder file.**
-**Replace this with your actual resume PDF!**
+When the resume changes, replace `public/rohit-kag-it-resume.pdf` first and keep the legacy copies in sync if old links need to continue working.

@@ -7,16 +7,34 @@ import type { Engine } from '@tsparticles/engine';
 
 export default function ParticleBackground() {
     const [init, setInit] = useState(false);
+    const [enabled, setEnabled] = useState(false);
+    const [isCoarsePointer] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return window.matchMedia?.('(pointer: coarse)')?.matches ?? false;
+    });
 
     useEffect(() => {
+        const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+        if (prefersReducedMotion) return;
+
+        const enable = () => setEnabled(true);
+        // Allow the main content to paint first.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void) => number);
+        if (ric) ric(enable);
+        else window.setTimeout(enable, 400);
+    }, []);
+
+    useEffect(() => {
+        if (!enabled) return;
         initParticlesEngine(async (engine: Engine) => {
             await loadSlim(engine);
         }).then(() => {
             setInit(true);
         });
-    }, []);
+    }, [enabled]);
 
-    if (!init) return null;
+    if (!enabled || !init) return null;
 
     return (
         <Particles
@@ -27,7 +45,7 @@ export default function ParticleBackground() {
                         value: 'transparent',
                     },
                 },
-                fpsLimit: 60,
+                fpsLimit: isCoarsePointer ? 30 : 60,
                 interactivity: {
                     events: {
                         onClick: {
@@ -35,7 +53,7 @@ export default function ParticleBackground() {
                             mode: 'push',
                         },
                         onHover: {
-                            enable: true,
+                            enable: !isCoarsePointer,
                             mode: 'grab',
                         },
                         resize: {
@@ -58,9 +76,9 @@ export default function ParticleBackground() {
                     },
                     links: {
                         color: '#764ba2',
-                        distance: 120,
+                        distance: isCoarsePointer ? 150 : 120,
                         enable: true,
-                        opacity: 0.2,
+                        opacity: isCoarsePointer ? 0.15 : 0.2,
                         width: 1,
                     },
                     move: {
@@ -70,7 +88,7 @@ export default function ParticleBackground() {
                             default: 'bounce',
                         },
                         random: true,
-                        speed: 0.8,
+                        speed: isCoarsePointer ? 0.6 : 0.8,
                         straight: false,
                     },
                     number: {
@@ -79,7 +97,7 @@ export default function ParticleBackground() {
                             width: 1920,
                             height: 1080
                         },
-                        value: 30,
+                        value: isCoarsePointer ? 18 : 30,
                     },
                     opacity: {
                         value: 0.3,

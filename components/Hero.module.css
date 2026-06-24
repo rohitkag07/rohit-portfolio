@@ -311,6 +311,8 @@
         gap: var(--spacing-lg);
         text-align: center;
         padding: 0 var(--spacing-md);
+        width: 100%;
+        overflow: hidden;
     }
 
     .name {
@@ -332,11 +334,19 @@
     .badge {
         font-size: 0.75rem;
         padding: 0.4rem 0.8rem;
+        max-width: 100%;
+        white-space: normal;
+        justify-content: center;
+        line-height: 1.4;
     }
 
     .cta {
         justify-content: center;
         flex-wrap: wrap;
+        width: 100%;
+        max-width: 24rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .social {
@@ -344,8 +354,7 @@
     }
 
     .illustration {
-        order: -1;
-        margin-bottom: var(--spacing-md);
+        display: none;
     }
 
     .floatingCard {
@@ -367,6 +376,48 @@
         bottom: 1rem;
         width: 40px;
         height: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 6.5rem 0 3rem;
+        min-height: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+        overflow: hidden;
+    }
+
+    .illustration {
+        display: none;
+    }
+
+    .badge {
+        max-width: 100%;
+        white-space: normal;
+        justify-content: center;
+        line-height: 1.4;
+    }
+
+    .titleWrapper {
+        min-height: 2.8rem;
+        overflow: hidden;
+    }
+
+    .cta {
+        width: 100%;
+        max-width: 24rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .secondaryBtn {
+        flex: 1 1 11rem;
+        min-width: 0;
+        justify-content: center;
     }
 }
 
@@ -403,7 +454,8 @@
     }
 
     .secondaryBtn {
-        width: 100%;
+        flex: none;
+        width: min(100%, 16rem);
         justify-content: center;
         padding: 0.875rem 1.5rem;
     }

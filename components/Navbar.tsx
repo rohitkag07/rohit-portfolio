@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -16,11 +17,6 @@ export default function Navbar() {
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Force light theme always
-    useEffect(() => {
-        document.documentElement.removeAttribute('data-theme');
     }, []);
 
     const navLinks = [
@@ -70,6 +66,7 @@ export default function Navbar() {
                 </div>
 
                 <div className={styles.navActions}>
+                    <ThemeToggle />
                     <a href="#contact" className={styles.ctaBtn} onClick={(e) => scrollToSection(e, '#contact')}>
                         <span>Hire Me</span>
                         <ArrowRight size={16} />

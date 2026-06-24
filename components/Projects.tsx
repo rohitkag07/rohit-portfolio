@@ -1,10 +1,23 @@
 'use client';
 
-import { ExternalLink, Github, ArrowUpRight, Bot, Zap, ShoppingCart, Droplets, Info } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Building2, Camera, Landmark, Network, ShoppingCart } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
+import type React from 'react';
 import styles from './Projects.module.css';
+
+type Project = {
+    title: string;
+    subtitle: string;
+    description: string;
+    tech: string[];
+    features: string[];
+    github: string;
+    live: string;
+    gradient: string;
+    icon: React.ReactNode;
+};
 
 export default function Projects() {
     const { ref: sectionRef, inView: sectionInView } = useInView({
@@ -12,50 +25,61 @@ export default function Projects() {
         triggerOnce: true
     });
 
-    const projects = [
+    const projects: Project[] = [
         {
-            title: 'Kag Batteries',
-            subtitle: 'AI-Enhanced E-Commerce',
-            description: 'Advanced platform for battery distribution featuring integrated AI chatbots and automated inventory management loops.',
-            tech: ['React', 'Next.js', 'LLM Integration', 'Vercel'],
-            features: ['AI Chatbot Integration', 'Automated Inventory', 'Real-time Stock', 'Premium Analytics'],
-            github: 'https://github.com/rohitkag/kag-batteries',
-            live: 'https://kagbatteries.vercel.app/',
+            title: 'Xero Seven',
+            subtitle: 'AI Agency OS',
+            description: 'Public website and protected operations dashboard for an AI automation agency, with lead, client, project, proposal, analytics, live AI demo, and agent activity surfaces.',
+            tech: ['React', 'Vite', 'TypeScript', 'InsForge', 'Zustand', 'Vercel'],
+            features: ['Live AI Demo', 'Auth Dashboard', 'Realtime Hooks', 'Agent Endpoints'],
+            github: 'https://github.com/rohitkag07/xero-seven',
+            live: 'https://xero-seven.vercel.app',
+            gradient: 'linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%)',
+            icon: <Network size={24} />
+        },
+        {
+            title: 'KAG Batteries Digital Suite',
+            subtitle: 'B2B Website + Dealer CRM',
+            description: 'Business digitization suite with public product catalogue, dealer inquiry, restricted dealer CRM, order/payment tracking, Supabase Auth, RLS, and analytics dashboards.',
+            tech: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Recharts', 'Vercel'],
+            features: ['17 Product Pages', 'Dealer CRM', 'RLS Policies', 'WhatsApp CTA'],
+            github: 'https://github.com/rohitkag07/kag-batteries-website',
+            live: 'https://www.kagbatteries.in',
             gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
             icon: <ShoppingCart size={24} />
         },
         {
-            title: 'AI Workflow Automation',
-            subtitle: 'Enterprise Efficiency',
-            description: 'Intelligent business process automation system leveraging Claude API to streamline complex operational workflows.',
-            tech: ['Antigravity', 'Claude API', 'Python', 'Workflows'],
-            features: ['Recursive Tasking', 'API Orchestration', 'Cost Optimization', 'Process Mapping'],
-            github: '#',
-            live: '#',
-            gradient: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)',
-            icon: <Zap size={24} />
+            title: 'X7 Photography OS',
+            subtitle: 'Studio CRM + Guest Delivery',
+            description: 'Full-stack operating system for photographers covering CRM, bookings, editing workflow, client galleries, QR/selfie-based guest photo matching, uploads, albums, and revenue flows.',
+            tech: ['Next.js', 'TypeScript', 'Supabase', 'Express', 'Zod', 'Agent Services'],
+            features: ['Studio Dashboard', 'Guest Portal', 'Client Portal', 'Camera Uploader'],
+            github: 'https://github.com/rohitkag07/x7-photography',
+            live: 'https://x7-dashboard.vercel.app',
+            gradient: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+            icon: <Camera size={24} />
         },
         {
-            title: 'Moltbot AI Assistant',
-            subtitle: 'Autonomous Support',
-            description: 'Personalized AI assistant deployed on AWS, designed to handle support tickets and automate customer interactions.',
-            tech: ['AWS', 'Bolt', 'API Integration', 'Node.js'],
-            features: ['Live Support Loop', 'Adaptive Learning', 'Cloud Scalability', 'Webhook Triggers'],
-            github: '#',
-            live: '#',
-            gradient: 'linear-gradient(135deg, #a855f7 0%, #7e22ce 100%)',
-            icon: <Bot size={24} />
+            title: 'X7 RealEstate OS',
+            subtitle: 'Builder Sales + Colony Ops',
+            description: 'Builder operating system for Tier 2 real-estate businesses with lead qualification, site visits, bookings, campaign operations, colony management, and agent orchestration.',
+            tech: ['Next.js', 'TypeScript', 'Supabase', 'React Query', 'Express', 'Prisma'],
+            features: ['Lead CRM', 'Site Visits', 'Agent Mesh', 'Colony Operations'],
+            github: 'https://github.com/rohitkag07/x7-realestate-os',
+            live: 'https://x7-realestate-os.vercel.app',
+            gradient: 'linear-gradient(135deg, #10b981 0%, #047857 100%)',
+            icon: <Building2 size={24} />
         },
         {
-            title: 'BloodConnect',
-            subtitle: 'Social Impact Tech',
-            description: 'Real-time platform connecting blood donors with urgent recipients, facilitating life-saving digital bridges.',
-            tech: ['Web App', 'Real-time DB', 'Geolocation', 'Auth'],
-            features: ['Urgent Request Loop', 'Donor Mapping', 'Live Notifications', 'Verified Profiles'],
-            github: '#',
+            title: 'X7 CA Platform',
+            subtitle: 'Local AI/RAG for CA Firms',
+            description: 'On-premise AI automation platform for Indian CA firms with local RAG, Ollama, ChromaDB, PostgreSQL tenant isolation, document ingestion, and React/Vite demo shell.',
+            tech: ['Python', 'FastAPI', 'React', 'Vite', 'PostgreSQL', 'ChromaDB'],
+            features: ['Local AI', 'RAG Engine', 'Tenant Isolation', 'Demo Scenarios'],
+            github: 'https://github.com/rohitkag07/x7-ca-platform',
             live: '#',
-            gradient: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
-            icon: <Droplets size={24} />
+            gradient: 'linear-gradient(135deg, #64748b 0%, #334155 100%)',
+            icon: <Landmark size={24} />
         }
     ];
 
@@ -82,7 +106,7 @@ export default function Projects() {
     );
 }
 
-function ProjectCard({ project, index, inView }: { project: any; index: number; inView: boolean }) {
+function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -135,18 +159,26 @@ function ProjectCard({ project, index, inView }: { project: any; index: number; 
 
             <div className={styles.footer}>
                 <div className={styles.projectLinks}>
-                    <motion.a
-                        href={project.github}
-                        className={styles.linkIcon}
-                        whileHover={{ y: -3, color: 'var(--color-accent-primary)' }}
-                    >
-                        <Github size={20} />
-                    </motion.a>
+                    {project.github !== '#' && (
+                        <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.linkIcon}
+                            whileHover={{ y: -3, color: 'var(--color-accent-primary)' }}
+                            aria-label={`${project.title} GitHub`}
+                        >
+                            <Github size={20} />
+                        </motion.a>
+                    )}
                     {project.live !== '#' && (
                         <motion.a
                             href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={styles.linkIcon}
                             whileHover={{ y: -3, color: 'var(--color-accent-primary)' }}
+                            aria-label={`${project.title} live site`}
                         >
                             <ExternalLink size={20} />
                         </motion.a>

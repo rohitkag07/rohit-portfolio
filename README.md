@@ -54,7 +54,7 @@ components/Skills.tsx               Skills surface
 components/Experience.tsx           Timeline
 components/Contact.tsx              Contact flow
 hooks/                              Animation and counter hooks
-public/resume.pdf                   Resume asset
+public/rohit-kag-it-resume.pdf      Current resume download asset
 ```
 
 ## Positioning

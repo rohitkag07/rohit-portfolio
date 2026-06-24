@@ -58,10 +58,10 @@ export default function Contact() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="glass-card">
-                            <h3>Let's Connect</h3>
+                            <h3>Let&apos;s Connect</h3>
                             <p className={styles.intro}>
-                                I'm currently seeking opportunities in software development.
-                                Whether you have a question or just want to say hi, feel free to reach out!
+                                I&apos;m open to full-stack, AI automation, and product engineering roles.
+                                If you are hiring for React/Next.js, dashboards, or AI workflow development, feel free to reach out.
                             </p>
 
                             <div className={styles.infoList}>
@@ -91,17 +91,17 @@ export default function Contact() {
                             </div>
 
                             <div className={styles.social}>
-                                <a href="https://github.com/rohitkag" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                                <a href="https://github.com/rohitkag07" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                                     <Github size={20} />
                                     GitHub
                                 </a>
-                                <a href="https://linkedin.com/in/rohitkag" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                                <a href="https://www.linkedin.com/in/rohit-kag-7b3943b9/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                                     <Linkedin size={20} />
                                     LinkedIn
                                 </a>
                             </div>
 
-                            <a href="/resume.pdf" download className="btn btn-primary" style={{ width: '100%', marginTop: 'var(--spacing-md)' }}>
+                            <a href="/rohit-kag-it-resume.pdf" download="rohit-kag-it-resume.pdf" className="btn btn-primary" style={{ width: '100%', marginTop: 'var(--spacing-md)' }}>
                                 <Download size={20} />
                                 Download Resume
                             </a>

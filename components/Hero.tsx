@@ -15,11 +15,11 @@ export default function Hero() {
     };
 
     const roles = [
-        'AI Solutions Architect',
-        'Multi-Agent Systems Engineer',
-        'Workflow Automation Expert',
-        'Tech Entrepreneur',
-        'Digital Innovator'
+        'AI Automation Developer',
+        'Full-Stack Product Builder',
+        'React/Next.js Engineer',
+        'Supabase & Prisma Dashboard Builder',
+        'Agentic Workflow Architect'
     ];
 
     const containerVariants = {
@@ -73,7 +73,7 @@ export default function Hero() {
                 >
                     <motion.div className={styles.badge} variants={itemVariants}>
                         <div className={styles.badgeDot}></div>
-                        <span>Available for AI &amp; Multi-Agent Projects</span>
+                        <span>Available for Full-Stack &amp; AI Automation Roles</span>
                     </motion.div>
 
                     <motion.h1 className={styles.name} variants={itemVariants}>
@@ -86,9 +86,9 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.p className={styles.description} variants={itemVariants}>
-                        Building <strong>Enterprise Multi-Agent AI Systems</strong> with Google ADK, A2A &amp; MCP —
-                        deploying autonomous agent workforces on <strong>Google Cloud</strong> with code-level
-                        guardrails and stateful memory.
+                        Building <strong>React/Next.js products</strong>, Supabase-backed dashboards, and
+                        <strong> AI automation workflows</strong> for ecommerce, CRM, photography, real estate,
+                        compliance, and business operations.
                     </motion.p>
 
                     <motion.div className={styles.cta} variants={itemVariants}>
@@ -101,8 +101,8 @@ export default function Hero() {
                             <span>Hire Me</span>
                         </motion.a>
                         <motion.a
-                            href="/rohit-kag-resume.pdf"
-                            download="rohit-kag-resume.pdf"
+                            href="/rohit-kag-it-resume.pdf"
+                            download="rohit-kag-it-resume.pdf"
                             className={styles.secondaryBtn}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -149,28 +149,28 @@ export default function Hero() {
                                 <span className={styles.dot} style={{ background: '#ffbd2e' }}></span>
                                 <span className={styles.dot} style={{ background: '#27c93f' }}></span>
                             </div>
-                            <span className={styles.fileName}>agentverse.py</span>
+                            <span className={styles.fileName}>builder.profile.ts</span>
                         </div>
                         <div className={styles.code}>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>1</span>
-                                <span className={styles.keyword}>architect</span> = {'{'}
+                                <span className={styles.keyword}>builder</span> = {'{'}
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>2</span>
-                                &nbsp;&nbsp;<span className={styles.property}>name</span>: <span className={styles.string}>"Rohit Kag"</span>,
+                                &nbsp;&nbsp;<span className={styles.property}>name</span>: <span className={styles.string}>&quot;Rohit Kag&quot;</span>,
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>3</span>
-                                &nbsp;&nbsp;<span className={styles.property}>stack</span>: [<span className={styles.string}>"ADK"</span>, <span className={styles.string}>"A2A"</span>, <span className={styles.string}>"MCP"</span>],
+                                &nbsp;&nbsp;<span className={styles.property}>stack</span>: [<span className={styles.string}>&quot;Next.js&quot;</span>, <span className={styles.string}>&quot;Supabase&quot;</span>, <span className={styles.string}>&quot;AI&quot;</span>],
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>4</span>
-                                &nbsp;&nbsp;<span className={styles.property}>cloud</span>: <span className={styles.string}>"Google Cloud Run"</span>,
+                                &nbsp;&nbsp;<span className={styles.property}>projects</span>: <span className={styles.string}>&quot;Xero Seven / X7 OS&quot;</span>,
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>5</span>
-                                &nbsp;&nbsp;<span className={styles.property}>agents</span>: <span className={styles.string}>"∞ scalable"</span>,
+                                &nbsp;&nbsp;<span className={styles.property}>focus</span>: <span className={styles.string}>&quot;business automation&quot;</span>,
                             </div>
                             <div className={styles.codeLine}>
                                 <span className={styles.lineNumber}>6</span>

@@ -13,29 +13,27 @@ export default function Experience() {
 
     const experiences = [
         {
-            role: 'AI Solutions Architect — Multi-Agent Systems',
-            company: 'Self-Initiated Engineering Projects',
-            period: '2024 - Present',
+            role: 'AI Product Developer / Founder-Builder',
+            company: 'Self-Initiated Product Builds',
+            period: '2023 - Present',
             location: 'Indore, India',
-            description: 'Architected and deployed production-grade multi-agent ecosystems on Google Cloud.',
+            description: 'Built practical full-stack products and AI automation workflows for Indian business operations.',
             achievements: [
-                'Built enterprise orchestration system using Google ADK — Sequential, Parallel & Loop agent workflows',
-                'Engineered custom MCP Servers: External API Gateway, Serverless Function Executor & Secure DB Toolbox (PostgreSQL)',
-                'Developed master Orchestrator agent using Agent-to-Agent (A2A) protocol for dynamic task delegation',
-                'Implemented Interceptor Pattern with Callbacks/Plugins for rate limiting, cooldown & prompt-injection filtering',
-                'Containerised entire agentic ecosystem with Docker & deployed on Google Cloud Run via Cloud Build'
+                'Built Xero Seven, KAG Batteries Digital Suite, X7 Photography OS, X7 RealEstate OS, and X7 CA Platform',
+                'Developed React/Next.js products, Supabase/Prisma dashboards, Express/FastAPI services, and Vercel deployments',
+                'Designed AI workflow architectures using LLM APIs, local Ollama, ChromaDB, agent routing, and tool-gateway patterns'
             ]
         },
         {
-            role: 'AI Product Development',
-            company: 'Self-Initiated Projects',
+            role: 'Business Workflow Digitization',
+            company: 'Xero Seven Product Portfolio',
             period: '2023 - Present',
             location: 'Indore, India',
-            description: 'Engineering autonomous systems and AI-integrated platforms.',
+            description: 'Converted offline business processes into working software systems.',
             achievements: [
-                'Built Kag Batteries e-commerce with AI chatbot & automated inventory',
-                'Developed Claude API workflows for business process optimization',
-                'Deployed Moltbot (AI Assistant) on AWS with Bolt integration'
+                'Built dealer CRM, product catalogue, order/payment tracking, and analytics surfaces for KAG Batteries',
+                'Designed studio CRM, guest portal, client portal, and QR/selfie-based delivery flows for photography studios',
+                'Created real-estate builder CRM and CA firm local AI/RAG architecture'
             ]
         },
         {
@@ -47,7 +45,7 @@ export default function Experience() {
             achievements: [
                 'Produced AI marketing videos using Kling AI, HeyGen & ElevenLabs',
                 'Orchestrated automated coding workflows using Claude Code',
-                'Architected premium personal brand strategy with modern UI/UX'
+                'Used AI coding workflows for product scaffolding, UI implementation, documentation, and automation planning'
             ]
         },
         {
@@ -71,21 +69,21 @@ export default function Experience() {
             institution: 'Acropolis Institute of Technology and Research',
             location: 'Indore | RGPV',
             period: '2014 - 2018',
-            grade: 'Core Focus: Software Engineering'
+            grade: 'CGPA: 6.2'
         },
         {
             degree: 'Senior Secondary (12th)',
             institution: 'MP Board',
             location: 'Indore',
             period: '2013 - 2014',
-            grade: '74%'
+            grade: 'First Division'
         },
         {
             degree: 'High School (10th)',
             institution: 'MP Board',
             location: 'Indore',
             period: '2011',
-            grade: '66.5%'
+            grade: 'First Division'
         }
     ];
 
