@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Github, ArrowUpRight, Building2, Camera, Landmark, Network, ShoppingCart } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Building2, Camera, Landmark, MessageCircle, Network, ShoppingCart } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import type { MouseEvent } from 'react';
@@ -13,8 +13,10 @@ type Project = {
     description: string;
     tech: string[];
     features: string[];
+    proof?: string[];
     github: string;
     live: string;
+    caseStudy: string;
     gradient: string;
     icon: React.ReactNode;
 };
@@ -27,6 +29,22 @@ export default function Projects() {
 
     const projects: Project[] = [
         {
+            title: 'WhatsAI Assistant / XeroWA',
+            subtitle: 'WhatsApp Lead Conversion Platform',
+            description: 'Multi-tenant WhatsApp receptionist for Indian SMBs: approved replies, lead qualification, appointment/site-visit capture, follow-ups, broadcasts, owner handoff, and operator-visible evidence.',
+            tech: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'WhatsApp Cloud API', 'Vercel'],
+            features: ['Webhook Ingress', 'Tenant Playbooks', 'Follow-Up Scheduler', 'Owner Handoff'],
+            proof: [
+                'Built around deterministic business-approved replies, not generic chatbot output.',
+                'Local proof gates cover readiness, tenant isolation, RLS/evidence paths, and keyword-engine behavior.'
+            ],
+            github: 'https://github.com/rohitkag07/whatsai-assistant',
+            live: 'https://landing-iota-lemon.vercel.app/',
+            caseStudy: '/case-studies/whatsai-xerowa',
+            gradient: 'linear-gradient(135deg, #22c55e 0%, #059669 100%)',
+            icon: <MessageCircle size={24} />
+        },
+        {
             title: 'Xero Seven',
             subtitle: 'AI Agency OS',
             description: 'Public website and protected operations dashboard for an AI automation agency, with lead, client, project, proposal, analytics, live AI demo, and agent activity surfaces.',
@@ -34,6 +52,7 @@ export default function Projects() {
             features: ['Live AI Demo', 'Auth Dashboard', 'Realtime Hooks', 'Agent Endpoints'],
             github: 'https://github.com/rohitkag07/xero-seven',
             live: 'https://xero-seven.vercel.app',
+            caseStudy: 'https://xero-seven.vercel.app',
             gradient: 'linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%)',
             icon: <Network size={24} />
         },
@@ -43,8 +62,9 @@ export default function Projects() {
             description: 'Business digitization suite with public product catalogue, dealer inquiry, restricted dealer CRM, order/payment tracking, Supabase Auth, RLS, and analytics dashboards.',
             tech: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Recharts', 'Vercel'],
             features: ['17 Product Pages', 'Dealer CRM', 'RLS Policies', 'WhatsApp CTA'],
-            github: 'https://github.com/rohitkag07/kag-batteries-website',
+            github: 'https://github.com/rohitkag07/kag-batteries-dealer-crm',
             live: 'https://www.kagbatteries.in',
+            caseStudy: 'https://www.kagbatteries.in',
             gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
             icon: <ShoppingCart size={24} />
         },
@@ -56,6 +76,7 @@ export default function Projects() {
             features: ['Studio Dashboard', 'Guest Portal', 'Client Portal', 'Camera Uploader'],
             github: 'https://github.com/rohitkag07/x7-photography',
             live: 'https://x7-dashboard.vercel.app',
+            caseStudy: 'https://x7-dashboard.vercel.app',
             gradient: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
             icon: <Camera size={24} />
         },
@@ -67,6 +88,7 @@ export default function Projects() {
             features: ['Lead CRM', 'Site Visits', 'Agent Mesh', 'Colony Operations'],
             github: 'https://github.com/rohitkag07/x7-realestate-os',
             live: 'https://x7-realestate-os.vercel.app',
+            caseStudy: 'https://x7-realestate-os.vercel.app',
             gradient: 'linear-gradient(135deg, #10b981 0%, #047857 100%)',
             icon: <Building2 size={24} />
         },
@@ -78,6 +100,7 @@ export default function Projects() {
             features: ['Local AI', 'RAG Engine', 'Tenant Isolation', 'Demo Scenarios'],
             github: 'https://github.com/rohitkag07/x7-ca-platform',
             live: '#',
+            caseStudy: 'https://github.com/rohitkag07/x7-ca-platform',
             gradient: 'linear-gradient(135deg, #64748b 0%, #334155 100%)',
             icon: <Landmark size={24} />
         }
@@ -149,6 +172,14 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
 
             <p className={styles.projectDescription}>{project.description}</p>
 
+            {project.proof && (
+                <ul className={styles.proofList}>
+                    {project.proof.map((point, proofIndex) => (
+                        <li key={proofIndex}>{point}</li>
+                    ))}
+                </ul>
+            )}
+
             <div className={styles.techStack}>
                 {project.tech.map((tech: string, techIndex: number) => (
                     <span key={techIndex} className={styles.techTag}>
@@ -184,13 +215,16 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
                         </motion.a>
                     )}
                 </div>
-                <motion.div
+                <motion.a
+                    href={project.caseStudy}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.detailsBtn}
                     whileHover={{ x: 5 }}
                 >
                     <span>View Case Study</span>
                     <ArrowUpRight size={16} />
-                </motion.div>
+                </motion.a>
             </div>
         </motion.div>
     );

@@ -57,11 +57,11 @@ export default function Skills() {
             title: 'Products Built',
             icon: Server,
             skills: [
+                'WhatsAI / XeroWA Lead Conversion',
                 'Xero Seven Agency OS',
                 'KAG Dealer CRM',
                 'X7 Photography OS',
-                'X7 RealEstate OS',
-                'X7 CA Platform'
+                'X7 RealEstate OS'
             ]
         },
         {

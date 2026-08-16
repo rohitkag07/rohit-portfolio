@@ -35,7 +35,11 @@ export const metadata: Metadata = {
     "Agentic AI",
     "RAG",
     "Business Automation",
-    "Xero Seven"
+    "Xero Seven",
+    "WhatsAI",
+    "XeroWA",
+    "WhatsApp Automation",
+    "Lead Conversion"
   ],
   authors: [{ name: "Rohit Kag" }],
   alternates: {
@@ -43,7 +47,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Rohit Kag - AI Automation Developer & Full-Stack Product Builder",
-    description: "Building React/Next.js products, Supabase-backed dashboards, and AI automation workflows for business operations.",
+    description: "Building React/Next.js products, Supabase-backed dashboards, WhatsApp lead-conversion systems, and AI automation workflows for business operations.",
     type: "website",
     url: "/",
     images: [
@@ -58,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rohit Kag - AI Automation Developer & Full-Stack Product Builder",
-    description: "Building React/Next.js products, Supabase-backed dashboards, and AI automation workflows for business operations.",
+    description: "Building React/Next.js products, Supabase-backed dashboards, WhatsApp lead-conversion systems, and AI automation workflows for business operations.",
     images: ["/profile.jpg"],
   },
   robots: {
